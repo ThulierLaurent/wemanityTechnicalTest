@@ -48,16 +48,15 @@ final class GildedRose {
             
             if ($item->sell_in < 0) {
                 if ($item->name != 'Aged Brie') {
-                    if ($item->name != 'Backstage passes' or $item->name != 'Backstage passes to a TAFKAL80ETC concert') {
+                    if ($item->name != 'Backstage passes to a TAFKAL80ETC concert') {
                         if ($item->quality > 0) {
-                            if ($item->name != 'Sulfuras, Hand of Ragnaros') {
+                            if ($item->name != 'Sulfuras, Hand of Ragnaros' and $item != 'Backstage passes') {
                                 $item->quality = $item->quality - 1;
                             }
                         }
                     } else {
-                        //$item->quality = $item->quality - $item->quality;
-                        //drop to 0 after a concert
-                        $item->quality = 0;
+                        //drop to 0 because of the concert
+                        $item->quality = $item->quality - $item->quality;
                     }
                 }else {
                     if ($item->quality < $this->maxValue) {

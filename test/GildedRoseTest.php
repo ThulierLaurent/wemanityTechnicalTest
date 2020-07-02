@@ -44,17 +44,19 @@ class GildedRoseTest extends \PHPUnit\Framework\TestCase {
 
     //Tests - Passes en coulisses
     public function testBackstagePassesProduct(){
+    	//10 days or less
     	$valueQuality = 30;
     	$items      = [new Item("Backstage passes", 10, $valueQuality)];
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
-        $this->assertEquals($valueQuality+2, $items[0]->quality+2);
+        $this->assertEquals($valueQuality+2, $items[0]->quality);
 
+		//5 days or less
         $valueQuality2 = 30;
         $items2      = [new Item("Backstage passes", 5, $valueQuality2)];
-        $gildedRose2 = new GildedRose($items);
+        $gildedRose2 = new GildedRose($items2);
         $gildedRose2->updateQuality();
-        $this->assertEquals($valueQuality2+3, $items[0]->quality+3);
+        $this->assertEquals($valueQuality2+3, $items2[0]->quality);
     }
 
     //Conjured
