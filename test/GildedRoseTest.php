@@ -44,15 +44,17 @@ class GildedRoseTest extends \PHPUnit\Framework\TestCase {
 
     //Tests - Passes en coulisses
     public function testBackstagePassesProduct(){
-    	$items      = [new Item("Backstage passes", 10, 30)];
+    	$valueQuality = 30;
+    	$items      = [new Item("Backstage passes", 10, $valueQuality)];
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
-        $this->assertEquals(60, $items[0]->quality*2);
+        $this->assertEquals($valueQuality+2, $items[0]->quality+2);
 
-        $items      = [new Item("Backstage passes", 4, 90)];
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
-        $this->assertEquals(90, $items[0]->quality*3);
+        $valueQuality2 = 30;
+        $items2      = [new Item("Backstage passes", 5, $valueQuality2)];
+        $gildedRose2 = new GildedRose($items);
+        $gildedRose2->updateQuality();
+        $this->assertEquals($valueQuality2+3, $items[0]->quality+3);
     }
 
     //Conjured
