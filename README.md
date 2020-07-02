@@ -49,3 +49,27 @@ Tips
 
 PHPUnit has a very thorough reference manual. It would be particularly useful to explore the
 [Data Providers](https://phpunit.readthedocs.io/en/8.1/writing-tests-for-phpunit.html#data-providers) section.
+
+Git Flow
+----
+
+It's been installed with Composer.
+It's the best tool for versioning a project
+Simple to use and wonderful architecture
+
+Testing
+----
+
+To test, you only need to use vendor/bin/phpunit
+All assertions are inside the folder test
+It's been written before coding inside updateQuality method.
+It's TDD Strategy.
+
+
+
+PHP Architecture
+----
+
+No needs for Laravel or CodeIngiter framework.
+=> No views or database. 
+I only updated the existing files inside src folder
