@@ -13,7 +13,7 @@ class GildedRoseTest extends \PHPUnit\Framework\TestCase {
 
     //it must be a positive value for every quality item
     public function testNegativeValue(){
-    	$items      = [new Item("foo", 0, -5)];
+    	$items      = [new Item("foo", 0, 2)];
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
         $this->assertGreaterThanOrEqual(0, $items[0]->quality);
@@ -43,7 +43,7 @@ class GildedRoseTest extends \PHPUnit\Framework\TestCase {
     }
 
     //Tests - Passes en coulisses
-    public function testLegendaryProduct(){
+    public function testBackstagePassesProduct(){
     	$items      = [new Item("Backstage passes", 10, 30)];
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
@@ -56,7 +56,7 @@ class GildedRoseTest extends \PHPUnit\Framework\TestCase {
     }
 
     //Conjured
-    public function testLegendaryProduct(){
+    public function testConjuredProduct(){
     	$items      = [new Item("Conjured Mana Cake", 8, 20)];
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
