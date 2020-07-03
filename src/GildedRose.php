@@ -43,29 +43,37 @@ final class GildedRose {
                     }
                 }
             }
-            
+
             //one day in less
-            if ($item->name != 'Sulfuras, Hand of Ragnaros') {
-                $item->sell_in = $item->sell_in - 1;
-            }
-            
+            $this->decreaseDays($item);
+
             //depending on days
-            if ($item->sell_in < 0) {
-                if ($item->name != 'Aged Brie') {
-                    if ($item->name != 'Backstage passes to a TAFKAL80ETC concert') {
-                        if ($item->quality > 0) {
-                            if ($item->name != 'Sulfuras, Hand of Ragnaros' or $item != 'Backstage passes') {
-                                $item->quality = $item->quality - 1;
-                            }
+            $this->checkSellIn($item);
+        }
+    }
+
+    private function decreaseDays($item){
+        if ($item->name != 'Sulfuras, Hand of Ragnaros') {
+            $item->sell_in = $item->sell_in - 1;
+        }
+    }
+
+    private function checkSellIn($item){
+        if ($item->sell_in < 0) {
+            if ($item->name != 'Aged Brie') {
+                if ($item->name != 'Backstage passes to a TAFKAL80ETC concert') {
+                    if ($item->quality > 0) {
+                        if ($item->name != 'Sulfuras, Hand of Ragnaros' or $item != 'Backstage passes') {
+                            $item->quality = $item->quality - 1;
                         }
-                    } else {
-                        //drop to 0 because of the concert
-                        $item->quality = $item->quality - $item->quality;
                     }
-                }else {
-                    if ($item->quality < $this->maxValue) {
-                        $item->quality = $item->quality + 1;
-                    }
+                } else {
+                    //drop to 0 because of the concert
+                    $item->quality = $item->quality - $item->quality;
+                }
+            }else {
+                if ($item->quality < $this->maxValue) {
+                    $item->quality = $item->quality + 1;
                 }
             }
         }
