@@ -50,12 +50,26 @@ Tips
 PHPUnit has a very thorough reference manual. It would be particularly useful to explore the
 [Data Providers](https://phpunit.readthedocs.io/en/8.1/writing-tests-for-phpunit.html#data-providers) section.
 
+
+__
+Written by Laurent Thulier
+__
+
+You can clone this project with develop or master branch.
+You only need to execute phpunit or texttest_fixture.
+Nothing mentioned views in HTML/CSS, so it's only in console.
+It was the first time I developed with PHPUnit.
+I discovered the documentation step by step.
+
 Git Flow
 ----
 
-It's been installed with Composer.
+It's been installed with Composer during the development.
 It's the best tool for versioning a project
-Simple to use and wonderful architecture
+Simple to use and wonderful architecture.
+
+I mostly used feature (many branches but not all on github), relase.
+In case of, to show my skills, I pushed everything !
 
 Testing
 ----
@@ -63,8 +77,7 @@ Testing
 To test, you only need to use vendor/bin/phpunit
 All assertions are inside the folder test
 It's been written before coding inside updateQuality method.
-It's TDD Strategy.
-
+All has been code around TDD Strategy. I added the coverage code.
 
 
 PHP Architecture
